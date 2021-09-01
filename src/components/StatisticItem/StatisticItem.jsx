@@ -1,7 +1,8 @@
+import { StyledItem } from "./StatisticItem.styled";
 export const StatisticItem = ({ title, value }) => {
   return (
-    <p>
+    <StyledItem>
       {title}:<span>{value}</span>
-    </p>
+    </StyledItem>
   );
 };
