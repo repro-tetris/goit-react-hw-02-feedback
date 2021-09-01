@@ -1,4 +1,4 @@
-import StatisticButton from "../StatisticButton/StatisticButton";
+import { StatisticButton } from "../StatisticButton/StatisticButton";
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const buttons = Object.keys(options);
   return (

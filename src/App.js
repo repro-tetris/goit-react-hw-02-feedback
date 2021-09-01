@@ -2,6 +2,7 @@ import React from "react";
 import { Section } from "./components/Section/Section";
 import { FeedbackOptions } from "./components/FeedbackOptions/FeedbackOptions";
 import { Statistics } from "./components/Statistics/Statistics";
+import { Notification } from "./components/Notification/Notification";
 
 class App extends React.Component {
   state = {
@@ -16,7 +17,7 @@ class App extends React.Component {
     const { good } = this.state;
     const total = this.countTotalFeedback();
 
-    return total === 0 ? 0 : Math.round((good * 100) / total);
+    return total === 0 ? "%" : Math.round((good * 100) / total) + "%";
   };
 
   handleButton = (feedbackEntity) => {
@@ -38,8 +39,8 @@ class App extends React.Component {
             onLeaveFeedback={this.handleButton}
           />
         </Section>
-        {total > 0 && (
-          <Section title="Statistics">
+        <Section title="Statistics">
+          {total > 0 ? (
             <Statistics
               good={good}
               neutral={neutral}
@@ -47,8 +48,10 @@ class App extends React.Component {
               total={total}
               positivePercentage={this.countPositiveFeedbackPercentage()}
             />
-          </Section>
-        )}
+          ) : (
+            <Notification message="No feedback given" />
+          )}
+        </Section>
       </div>
     );
   }
