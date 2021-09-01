@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { StatisticButton } from "../StatisticButton/StatisticButton";
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
@@ -17,4 +19,9 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       })}
     </div>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.object,
+  onLeaveFeedback: PropTypes.func,
 };
