@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import { StatisticItem } from "../StatisticItem/StatisticItem";
+import { StatisticItem } from "../../Statistic";
 
 export const Statistics = ({
   good,
